@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJS TESTING</title>
+     
+</head>
+<body>
+    <h1> <%= whichday %> </h1>
+    <ul>
+      <!--Instead of giving these 3 li initally you can give them in items array of app.js as its initial elements ; like:
+      var items=["code","code again","code forever"];
+      -->
+      <li>code </li>
+      <li>code again </li>
+      <li>code forever</li>
+    
+<% for(var i=0;i<newlistitems.length;i++){ %>
+   <li><%= newlistitems[i] %> </li>
+<%}%>
+    </ul>
+
+    <form action="/" method="post">
+      <input type="text" name="newitem">
+      <button type="submit" name="button">Add</button>
+    <!--so when we press the submit button, our form will make a post request to the home route and it will post the value of our text input which has the name of newitem. Now when that request is receeived,
+      it gets caught inside the app.post section .And then we tap into the request looking through the body of the post request and we search for the value whose variable name is newitem.
+    -->
+    </form>
+</body>
+
+</html>
